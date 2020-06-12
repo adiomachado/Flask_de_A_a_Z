@@ -1,0 +1,20 @@
+Tipos de dados no SQLAlchemy
+Tipos de dados:
+Integer - Tipo de dado inteiro;
+String - String com tamanho máximo (Possui um parâmetro ​size​ que pode ser passado para definir o tamanho da string entre até 255​);
+Text - Texto unicode mais longo (Longtext)​;
+DateTime - Data e hora (Possui um parâmetro ​size​ que pode ser passado para definir o tamanho da data);
+Float - Ponto flutuante​;
+Boolean - Valores booleanos​ (True ou False);
+PickleType - Armazena um objeto Python em pickled (Objeto serializado)​;
+LargeBinary - Armazena grandes dados binários arbitrários​.
+Todos esses dados constam na classe SQLAlchemy. Quando instânciamos db=SQLAlchemy(config.APP) podemos chamar qualquer um desses exe: ​db.Integer​. Fique atento as particularidades de cada um e para qualquer dúvida consulte a documentação.
+
+Parâmetros aceitos pelo método ​Column ​da classes ​SQLAlchemy:
+​primary_key: Campo que define se a coluna é do tipo ​chave primária, ​ é do tipo Booleano. Exe: primary_key=True;
+unique: Campo que define se a coluna é do tipo única, que não pode conter valores repetidos​ é do tipo Booleano. Exe: unique​=False;
+nullable: Campo que define se a coluna pode ser nula ou não é do tipo Booleano. Exe: nullable=False​;
+default:  Define um valor padrão para a coluna. Depende do tipo do campo, se for uma string por exemplo o valor default terá que ser uma string;
+onupdate: Define um valor para a coluna quando ela sobre alteração. Similar ao ​default​, depende do tipo do campo;
+db.ForeignKey​: Atributo do tipo objeto que é usado para criar uma ​chave estrangeira ​na tabela. Ela recebe um parâmetro que é a classe e o atributo da classe que fará o relacionamento. Exe: db.ForeignKey(Role.id);
+
